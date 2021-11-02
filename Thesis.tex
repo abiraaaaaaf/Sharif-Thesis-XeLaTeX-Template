@@ -1,0 +1,75 @@
+% !TeX program = xelatex
+%After first compiling run following commands in command prompt and compile again:
+%bibtex Proposal - where Proposal is the name of your main file
+%makeglossaries Proposal - where Proposal is the name of your main file
+
+%\documentclass[twoside, openright, a4paper,12pt]{report} % Two side 
+\documentclass[oneside,a4paper,12pt]{book} 
+\usepackage{JMTemplate}
+% Information for pdf making
+%=======================================================
+\input{Thesis_Info}
+\hypersetup{
+pdftitle={\entitle} 
+pdfauthor ={\enAuthor}
+pdfsubject={\enlevel{} \entype{} (\enmajor), \enDep, Sharif University of Technology, Tehran, Iran}
+}
+
+\input{Thesis_GlossaryStyle} %This file wasR prepared by Sadegh Dorri
+ \makeglossaries
+% Begin of document
+%=======================================================
+
+\begin{document}
+\input{Thesis_headerfooter}
+\dominitoc %initialization of minitoc
+%\bstctlcite{Proposal:BSTcontrol} % activate IEEEtran_biboptions.bib options
+% Front matter
+%=======================================================
+\include{Thesis_Cover_fa}
+%\cleardoublepage % terminates the current paragraph and page, the same way as a report document.
+%\include{Thesis_Confirm}
+\input{Thesis_Abstract_fa}
+\thispagestyle{empty}
+\cleardoublepage %
+%\input{Thesis_Ack}
+%%
+%% Tables
+%%%=======================================================
+\cleardoublepage % terminates the current paragraph and page, the same way as a report document.
+\pagenumbering{harfi}
+\tableofcontents
+\cleardoublepage % terminates the current paragraph and page, the same way as a report document.
+\listoffigures
+\cleardoublepage % terminates the current paragraph and page, the same way as a report document.
+\listoftables
+\cleardoublepage % terminates the current paragraph and page, the same way as a report document.
+\pagenumbering{arabic} 
+%%
+% Chapters
+%%=======================================================
+\include{Thesis_Chap1}
+\include{Thesis_Chap2}
+\include{Thesis_Chap3}
+
+%% Appendices, Glossaries and Refrences
+%%=======================================================
+\begin{appendices}
+%%\resettranslations % reset the first-use flag of tranlsation glossareis
+%%\include{Thesis_App1}
+\end{appendices}
+\include{Thesis_References}
+%
+\makeglossaries
+\cleardoublepage
+\printpersianglossary
+\cleardoublepage
+\printenglishglossary
+%
+\include{Thesis_Abstract_en}
+\include{Thesis_Cover_en}
+\thispagestyle{empty}
+\cleardoublepage % terminates the current paragraph and page, the same way as a report document.
+
+
+\end{document}
